@@ -1,0 +1,29 @@
+<!-- 探究DOMContentLoad 与 FP 是否有直接关系 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>A1</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+    <div>A2</div>
+    <script>
+        document.body.style.backgroundColor = 'red';
+        document.body.style.width = (document.body.clientWidth + 1) + 'px';
+        console.log(document.body.clientWidth);
+        var i = 0;
+        while (i < 2 ** 28) {
+            i++;
+        }
+    </script> 
+</body>
+</html>
